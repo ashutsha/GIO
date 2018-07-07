@@ -1,5 +1,5 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+//using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
@@ -8,6 +8,7 @@ using GeoSeleniumWebdriver.ComponentHelper;
 using GeoSeleniumWebdriver.Configuration;
 using GeoSeleniumWebdriver.Settings;
 using TechTalk.SpecFlow;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace GeoSeleniumWebdriver.BaseClasses
 {
@@ -53,8 +54,7 @@ namespace GeoSeleniumWebdriver.BaseClasses
         
         private static FirefoxDriver GetFirefoxDriver()
         {
-            FirefoxOptions options = new FirefoxOptions();
-            FirefoxDriver driver = new FirefoxDriver(GetFirefoxptions());
+            FirefoxDriver driver = new FirefoxDriver();
             return driver;
         }
 
@@ -90,9 +90,7 @@ namespace GeoSeleniumWebdriver.BaseClasses
 
                 case BrowserType.IExplorer:
                     ObjectRepository.Driver = GetIEDriver();
-                    break;
-
-               
+                    break;            
                 
             }
             ObjectRepository.Driver.Manage()

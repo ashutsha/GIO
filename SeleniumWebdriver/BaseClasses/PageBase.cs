@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using Protractor;
 using SeleniumExtras.PageObjects;
 
 namespace GeoSeleniumWebdriver.BaseClasses
@@ -10,11 +11,11 @@ namespace GeoSeleniumWebdriver.BaseClasses
 
         public PageBase(IWebDriver _driver)
         {
-            PageFactory.InitElements(_driver,this);
+            PageFactory.InitElements(_driver, this);
             this.driver = _driver;
         }
 
-        
+
         public string Title
         {
             get { return driver.Title; }

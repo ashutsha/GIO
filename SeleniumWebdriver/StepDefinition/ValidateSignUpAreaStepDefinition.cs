@@ -1,7 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿//using Microsoft.VisualStudio.TestTools.UnitTesting;
 using GeoSeleniumWebdriver.ComponentHelper;
 using GeoSeleniumWebdriver.PageObject;
 using GeoSeleniumWebdriver.Settings;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +14,13 @@ namespace GeoSeleniumWebdriver.StepDefinition
     [Binding]
     public sealed class ValidateSignUpAreaStepDefinition
     {
+
         // For additional details on SpecFlow step definitions see http://go.specflow.org/doc-stepdef
         [Given(@"User is at anjularjs Home Page with url ""(.*)""")]
       
         public void GivenUserIsAtAnjularjsHomePageWithUrl(string url)
         {
+
             NavigationHelper.NavigateToUrl(url);
             GenericHelper.TakeScreenShot();
         }
@@ -48,7 +51,6 @@ namespace GeoSeleniumWebdriver.StepDefinition
         {
             Assert.AreEqual("Sign up — Conduit", ObjectRepository.sPage.Title);
             GenericHelper.TakeScreenShot();
-
         }
     }
 }

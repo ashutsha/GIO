@@ -3,6 +3,7 @@ using AventStack.ExtentReports;
 using AventStack.ExtentReports.Gherkin.Model;
 using AventStack.ExtentReports.Reporter;
 using GeoSeleniumWebdriver.ComponentHelper;
+using Protractor;
 using TechTalk.SpecFlow;
 
 namespace GeoSeleniumWebdriver.GeneralHook
@@ -13,18 +14,17 @@ namespace GeoSeleniumWebdriver.GeneralHook
         private static ExtentTest featureName;
         private static ExtentTest scenario;
         private static ExtentReports extent;
-        private static KlovReporter klov;
 
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
-            var htmlReporter = new ExtentHtmlReporter(@"C:\extentreport\SeleniumWithSpecflow\SpecflowParallelTest\ExtentReport.html");
+            var htmlReporter = new ExtentHtmlReporter(@"C:\extentreport\GIOReport.html");
             htmlReporter.Configuration().Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Dark;
-            
             //Attach report to reporter
             extent = new ExtentReports();
             extent.AttachReporter(htmlReporter);
         }
+        
 
         [AfterTestRun]
         public static void AfterTestRun()

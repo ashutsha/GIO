@@ -10,7 +10,6 @@ namespace GeoSeleniumWebdriver.Configuration
     {
         Firefox,
         Chrome,
-        IExplorer,
-        PhantomJs
+        IExplorer
     }
 }

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace GeoSeleniumWebdriver.PageObject
 {
@@ -30,11 +31,22 @@ namespace GeoSeleniumWebdriver.PageObject
         #region Actions
         public void SignUpAction()
         {
+            UserName.Clear();
             UserName.SendKeys("Ash");
             Password.SendKeys("1111");
             SignUp.Click();
         }
-       
+
+        public void EmailAction()
+        {
+            UserName.Clear();
+            UserName.SendKeys("Ash");
+            Password.Clear();
+            Password.SendKeys("1111");
+            EmailAddress.SendKeys("a@gmail.com");
+            SignUp.Click();
+        }
+
 
         #endregion
 

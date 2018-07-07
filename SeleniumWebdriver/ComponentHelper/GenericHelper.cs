@@ -40,20 +40,7 @@ namespace GeoSeleniumWebdriver.ComponentHelper
             });
         }
 
-        public static void SelecFromAutoSuggest(By autoSuggesLocator, string initialStr, string strToSelect,
-            By autoSuggestistLocator)
-        {
-            var autoSuggest = ObjectRepository.Driver.FindElement(autoSuggesLocator);
-            autoSuggest.SendKeys(initialStr);
-            Thread.Sleep(1000);
-
-            var wait = GenericHelper.GetWebdriverWait(TimeSpan.FromSeconds(40));
-            var elements = wait.Until(GetAllElements(autoSuggestistLocator));
-            var select = elements.First((x => x.Text.Equals(strToSelect, StringComparison.OrdinalIgnoreCase)));
-            select.Click();
-            Thread.Sleep(1000);
-        }
-
+       
         public static WebDriverWait GetWebdriverWait(TimeSpan timeout)
         {
             ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = (TimeSpan.FromSeconds(1));

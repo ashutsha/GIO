@@ -54,6 +54,12 @@
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="nunit.framework, Version=3.0.5797.27534, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.0.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Protractor, Version=0.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Protractor.0.11.0\lib\net40\Protractor.dll</HintPath>
+    </Reference>
     <Reference Include="RazorEngine, Version=3.10.0.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
       <HintPath>..\packages\RazorEngine.3.10.0\lib\net45\RazorEngine.dll</HintPath>
     </Reference>
@@ -113,6 +119,11 @@
     <Compile Include="Configuration\BrowserType.cs" />
     <Compile Include="CustomException\NoKeywordFoundException.cs" />
     <Compile Include="CustomException\NoSutiableDriverFound.cs" />
+    <Compile Include="FeatureFiles\EmailAddressValidation.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmailAddressValidation.feature</DependentUpon>
+    </Compile>
     <Compile Include="FeatureFiles\UsernameValidationError.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -129,6 +140,7 @@
     <Compile Include="PageObject\UHomePage.cs" />
     <Compile Include="Settings\AppConfigKeys.cs" />
     <Compile Include="Settings\ObjectRepository.cs" />
+    <Compile Include="StepDefinition\EmailValidationStepDefinition.cs" />
     <Compile Include="StepDefinition\UsernameValidationErrorStepDefinition.cs" />
     <Compile Include="StepDefinition\ValidateSignUpAreaStepDefinition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -136,6 +148,10 @@
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="FeatureFiles\EmailAddressValidation.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EmailAddressValidation.feature.cs</LastGenOutput>
     </None>
     <None Include="FeatureFiles\UsernameValidationError.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
